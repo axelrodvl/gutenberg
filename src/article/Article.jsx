@@ -10,7 +10,7 @@ function Article(props) {
         <>
             <Breadcrumb>
                 <BreadcrumbItem>
-                    <a href="#" onClick={() => props.setMenu(true)}>Главная</a>
+                    <a href="#" onClick={() => props.setMain(true)}>Главная</a>
                 </BreadcrumbItem>
                 <BreadcrumbItem active="true">Статьи</BreadcrumbItem>
             </Breadcrumb>

@@ -10,7 +10,7 @@ function Main(props) {
                 <h5>Статьи</h5>
 
                 <LinkButton
-                    setMenu={props.setMenu}
+                    setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     title="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
@@ -18,7 +18,7 @@ function Main(props) {
                     tags={["Разработка"]}
                 />
                 <LinkButton
-                    setMenu={props.setMenu}
+                    setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     title="Скорость и высота в авиации, и почему использовать в полёте барометр
@@ -27,7 +27,7 @@ function Main(props) {
                     tags={["Авиация"]}
                 />
                 <LinkButton
-                    setMenu={props.setMenu}
+                    setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     title="Верификация и валидация"
@@ -35,7 +35,7 @@ function Main(props) {
                     tags={["ISO 9000:2005"]}
                 />
                 <LinkButton
-                    setMenu={props.setMenu}
+                    setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     title="Поднимаем собственный блог на Hugo"
@@ -78,7 +78,7 @@ function LinkButton(props) {
                     props.setArticle(props.linkToFetch);
                     props.setArticleTitle(props.title)
                 }
-                props.setMenu(false);
+                props.setMain(false);
             }} className="text-reset text-decoration-none">
                 <Card.Body>
                     <h6 className="card-subtitle mb-1">{props.title}</h6>
