@@ -53,7 +53,7 @@ function App() {
               </div>
               <div className="col text-right">
                 <p className="m-0">Powered by</p>
-                <p className="m-0 font-weight-bold"><a href="https://axelrod.co" title="axelrod.co">axelrod-webserver</a>
+                <p className="m-0 font-weight-bold"><a href="https://github.com/axelrodvl/gutenberg" title="gutenberg">gutenberg</a>
                 </p>
               </div>
             </div>
