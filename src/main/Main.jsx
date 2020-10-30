@@ -62,6 +62,12 @@ function Main(props) {
                     tags={["Java", "IBM MQ"]}
                 />
                 <LinkButton
+                    title="Jenkins toolkit for Kubernetes"
+                    body="Создание pipeline на Kubernetes для сборки Java/Gradle"
+                    link="https://github.com/axelrodvl/jenkins-toolkit"
+                    tags={["Jenkins", "Kubernetes"]}
+                />
+                <LinkButton
                     title="Smirnov Tennis"
                     body="Веб-сайт тренера по большому теннису"
                     link="https://smirnovtennis.com"
