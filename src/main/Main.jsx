@@ -1,7 +1,8 @@
 import Card from "react-bootstrap/Card";
-import React from "react";
+import React, {useCallback} from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import {useHistory} from 'react-router-dom';
 
 function Main(props) {
     return (
@@ -97,12 +98,16 @@ function Main(props) {
 }
 
 function LinkButton(props) {
+    const history = useHistory();
+    const handleOnClick = useCallback(() => history.push('/article'), [history]);
+
     return (
         <Card className="mb-3 btn btn-outline-dark">
             <a href={props.link} onClick={() => {
                 if (props.linkToFetch) {
                     props.setArticle(props.linkToFetch);
-                    props.setArticleTitle(props.title)
+                    props.setArticleTitle(props.title);
+                    handleOnClick();
                 }
                 props.setMain(false);
             }} className="text-reset text-decoration-none">

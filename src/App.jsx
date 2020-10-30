@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Container, Jumbotron} from "react-bootstrap";
+import {Breadcrumb, BreadcrumbItem, Container, Jumbotron} from "react-bootstrap";
 import Article from "./article/Article";
 import Main from "./main/Main";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -8,6 +8,12 @@ import {faEnvelope, faFilePdf} from '@fortawesome/free-solid-svg-icons'
 import {faGithub} from "@fortawesome/free-brands-svg-icons"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function App() {
     const [main, setMain] = useState(true);
@@ -20,10 +26,30 @@ function App() {
             <Container className="text-center">
                 <Header/>
 
-                {main
-                    ? <Main setArticle={setArticleMarkdownUrl} setArticleTitle={setArticleTitle} setMain={setMain}/>
-                    : <Article markdownFileUrl={articleMarkdownUrl} title={articleTitle} setMain={setMain}/>
-                }
+                <Router>
+                    <div>
+                        <Breadcrumb className="text-center sticky-top">
+                            <BreadcrumbItem>
+                                <Link onClick={() => {
+                                    setMain(true);
+                                    window.scrollTo(0, 0);
+                                }} to="/">Главная</Link>
+                            </BreadcrumbItem>
+                            {!main
+                                ? <BreadcrumbItem active={true}>Статьи</BreadcrumbItem>
+                                : null
+                            }
+                        </Breadcrumb>
+                        <Switch>
+                            <Route path="/article">
+                                <Article markdownFileUrl={articleMarkdownUrl} title={articleTitle} setMain={setMain}/>
+                            </Route>
+                            <Route path="/">
+                                <Main setArticle={setArticleMarkdownUrl} setArticleTitle={setArticleTitle} setMain={setMain}/>
+                            </Route>
+                        </Switch>
+                    </div>
+                </Router>
 
                 <Footer/>
             </Container>
