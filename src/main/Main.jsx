@@ -63,7 +63,7 @@ function Main(props) {
                 />
                 <LinkButton
                     title="Jenkins toolkit for Kubernetes"
-                    body="Создание pipeline на Kubernetes для сборки Java/Gradle"
+                    body="Создание pipeline на Jenkins в Kubernetes для сборки Java/Gradle"
                     link="https://github.com/axelrodvl/jenkins-toolkit"
                     tags={["Jenkins", "Kubernetes"]}
                 />
