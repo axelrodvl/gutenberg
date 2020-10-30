@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.fullscreen-with-header {
+    height: calc(100vh - 56px) !important;
+    height: -o-calc(100vh - 56px); /* opera */
+    height: -webkit-calc(100vh - 56px); /* google, safari */
+    height: -moz-calc(100vh - 56px); /* firefox */
+}
+
+.fullscreen-with-header-and-border {
+    height: calc(100vh - 56px - 86px) !important;
+    height: -o-calc(100vh - 56px - 86px); /* opera */
+    height: -webkit-calc(100vh - 56px - 86px); /* google, safari */
+    height: -moz-calc(100vh - 56px - 86px); /* firefox */
+}
+
+.bg-info {
+    background-color: #FFFFFF !important;
+}
+
+.bg-dark {
+    background-color: #000000 !important;
+}
+
+.background-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.background-image-main {
+    background-position: center 35%;
+}
+
+.background-image-contact {
+    background-position: center 35%;
+}
+
+/*
+ * Extra utilities
+ */
+
+.flex-equal > * {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+@media (min-width: 768px) {
+    .flex-md-equal > * {
+        -ms-flex: 1;
+        flex: 1;
+    }
+}
+
+/*
+ * Home and carousel
+ */
+
+
+.home-logo {
+    position: absolute;
+    z-index: 10;
+}
+
+.logo {
+    height: 15px;
+}
+
+.home-text {
+    font-weight: 800;
+}
+
+.home-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    color: #FFFFFF;
+}
+
+#carousel-vertical {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    #carousel-horizontal {
+        display: none;
+    }
+
+    #carousel-vertical {
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.fa {
+    font-weight: normal;
+    font-family: sans-serif !important;
+}
+
+.fa-main::before {
+    padding-right: 12px;
+    font-family: 'FontAwesome', sans-serif;
+}
+
+.fa-main {
+    text-align: left !important;
+}
+
+.fa-fixed {
+    width: 246px;
+}
+
+.anchor {
+    display: block;
+    height: 52px; /* this is the height of your header */
+    margin-top: -52px; /* this is again negative value of the height of your header */
+    visibility: hidden;
+}
+
+.mt-standard {
+    margin-top: 6rem !important;
+}
+
+/*.fc-body .fc-row { min-height: 45px; }*/
+
+/*.fc-bg {*/
+/*  height: 30px;*/
+/*}*/
+
+/*.fc-day {*/
+/*  width: 30px;*/
+/*}*/
+
+.rounded {
+    border-radius: .75rem !important
+}
+
+.btn-outline-dark {
+    color: #343a40;
+    /*border-color: #343a40;*/
+}
+
+.btn-outline-dark:hover {
+    color: #000;
+    background-color: #eee;
+    border-color: #eee;
+}
+
+.btn-outline-dark:focus, .btn-outline-dark.focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
+
+.btn-outline-dark.disabled, .btn-outline-dark:disabled {
+    color: #343a40;
+    background-color: transparent;
+}
+
+.btn-outline-dark:not(:disabled):not(.disabled):active, .btn-outline-dark:not(:disabled):not(.disabled).active,
+.show > .btn-outline-dark.dropdown-toggle {
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+}
+
+.btn-outline-dark:not(:disabled):not(.disabled):active:focus, .btn-outline-dark:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-dark.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(52, 58, 64, 0.5);
+}
