@@ -21,6 +21,14 @@ function Main(props) {
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
+                    title="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
+                    linkToFetch="/article/airplane-ground-handling.md"
+                    tags={["Авиация"]}
+                />
+                <LinkButton
+                    setMain={props.setMain}
+                    setArticle={props.setArticle}
+                    setArticleTitle={props.setArticleTitle}
                     title="Скорость и высота в авиации, и почему использовать в полёте барометр
                   и GPS телефона (почти) бесполезно"
                     linkToFetch="/article/airplane-speed-and-gps.md"
@@ -54,16 +62,28 @@ function Main(props) {
                     tags={["Java", "IBM MQ"]}
                 />
                 <LinkButton
+                    title="Smirnov Tennis"
+                    body="Веб-сайт тренера по большому теннису"
+                    link="https://smirnovtennis.com"
+                    tags={["JavaScript", "React", "Bootstrap"]}
+                />
+                <LinkButton
                     title="Skyduck Web"
-                    body="Разработка front-end для Skyduck"
+                    body="Разработка frontend для Skyduck"
                     link="https://skyduck.app/cabinet/"
                     tags={["JavaScript", "React", "Bootstrap"]}
                 />
                 <LinkButton
                     title="toU – couple game"
-                    body="Back-end для мобильного приложения"
+                    body="Backend для мобильного приложения"
                     link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
                     tags={["Java", "Spring", "MongoDB"]}
+                />
+                <LinkButton
+                    title="youlost.today"
+                    body="Калькулятор изменения курсов валют с момента начала COVID-19"
+                    link="https://youlost.today/"
+                    tags={["JavaScript"]}
                 />
             </Col>
         </Row>
