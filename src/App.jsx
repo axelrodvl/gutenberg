@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
+import './App.scss';
 import {Breadcrumb, BreadcrumbItem, Container, Jumbotron} from "react-bootstrap";
 import Article from "./article/Article";
 import Main from "./main/Main";
