@@ -112,8 +112,8 @@ function LinkButton(props) {
                 props.setMain(false);
             }} className="text-reset text-decoration-none">
                 <Card.Body>
-                    <h6 className="mb-2">{props.title}</h6>
-                    {props.body ? <h6 className="mb-2">{props.body}</h6> : null}
+                    <h6 className="card-subtitle mb-1">{props.title}</h6>
+                    {props.body ? <p className="mb-0">{props.body}</p> : <></>}
                     {props.tags.map((tag) => (
                         <span className="badge badge-primary mr-1">{tag}</span>
                     ))}
