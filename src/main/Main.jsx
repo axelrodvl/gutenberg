@@ -15,7 +15,7 @@ function Main(props) {
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     body="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
-                    linkToFetch="/article/raspberry-pi-meteo.md"
+                    linkToFetch="/article/raspberry-pi-meteo.md?v=2"
                     tags={["Разработка"]}
                 />
                 <LinkButton
@@ -23,7 +23,7 @@ function Main(props) {
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     body="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
-                    linkToFetch="/article/airplane-ground-handling.md"
+                    linkToFetch="/article/airplane-ground-handling.md?v=2"
                     tags={["Авиация"]}
                 />
                 <LinkButton
@@ -32,7 +32,7 @@ function Main(props) {
                     setArticleTitle={props.setArticleTitle}
                     body="Скорость и высота в авиации, и почему использовать в полёте барометр
                   и GPS телефона (почти) бесполезно"
-                    linkToFetch="/article/airplane-speed-and-gps.md"
+                    linkToFetch="/article/airplane-speed-and-gps.md?v=2"
                     tags={["Авиация"]}
                 />
                 <LinkButton
@@ -40,7 +40,7 @@ function Main(props) {
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     body="Верификация и валидация"
-                    linkToFetch="/article/verification-validation.md"
+                    linkToFetch="/article/verification-validation.md?v=2"
                     tags={["ISO 9000:2005"]}
                 />
                 <LinkButton
@@ -48,7 +48,7 @@ function Main(props) {
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
                     body="Поднимаем собственный блог на Hugo"
-                    linkToFetch="/article/how-to-blog.md"
+                    linkToFetch="/article/how-to-blog.md?v=2"
                     tags={["Разработка"]}
                 />
             </Col>
