@@ -18,6 +18,14 @@ function Main(props) {
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
+                    body="Обзор IBM App Connect Enterprise"
+                    linkToFetch="/article/ibm-app-connect-enterprise.md?v=2"
+                    tags={["IBM", "App Connect Enterprise", "Integration Bus"]}
+                />
+                <LinkButton
+                    setMain={props.setMain}
+                    setArticle={props.setArticle}
+                    setArticleTitle={props.setArticleTitle}
                     body="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
                     linkToFetch="/article/raspberry-pi-meteo.md?v=2"
                     tags={["Разработка"]}
