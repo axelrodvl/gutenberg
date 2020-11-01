@@ -1,10 +1,14 @@
 import Card from "react-bootstrap/Card";
-import React, {useCallback} from "react";
+import React, {useCallback, useEffect} from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import {useHistory} from 'react-router-dom';
 
 function Main(props) {
+    useEffect(() => {
+        props.setMain(true);
+    })
+
     return (
         <Row className="justify-content-between">
             <Col xs={12} sm={6} md={6} lg={6} xl={6}>
@@ -112,7 +116,7 @@ function LinkButton(props) {
             <a href={props.link} onClick={() => {
                 if (props.linkToFetch) {
                     props.setArticle(props.linkToFetch);
-                    props.setArticleTitle(props.title);
+                    props.setArticleTitle(props.body);
                     handleOnClick();
                 }
                 props.setMain(false);
