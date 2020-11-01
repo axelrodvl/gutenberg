@@ -69,7 +69,7 @@ function Header() {
                 <a href="mailto:vadim@axelrod.co"><FontAwesomeIcon icon={faEnvelope}/> vadim@axelrod.co</a>
             </p>
             <p className="mb-0">
-                <a href="https://github.com/axelrodvl"><FontAwesomeIcon icon={faFilePdf}/> Резюме</a>
+                <a href="cv/CV-Axelrod_Vadim.pdf"><FontAwesomeIcon icon={faFilePdf}/> Резюме</a>
             </p>
         </Jumbotron>
     )
