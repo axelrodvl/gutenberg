@@ -9,10 +9,9 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link, HashRouter
 } from "react-router-dom";
 
 function App() {
@@ -26,7 +25,7 @@ function App() {
             <Container className="text-center">
                 <Header/>
 
-                <Router>
+                <HashRouter>
                     <div>
                         <Breadcrumb className="text-center sticky-top">
                             <BreadcrumbItem>
@@ -49,7 +48,7 @@ function App() {
                             </Route>
                         </Switch>
                     </div>
-                </Router>
+                </HashRouter>
 
                 <Footer/>
             </Container>
