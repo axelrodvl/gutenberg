@@ -8,13 +8,13 @@ function Main(props) {
     return (
         <Row className="justify-content-between">
             <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                <h5>Статьи</h5>
+                <h5 className="mb-3">Статьи</h5>
 
                 <LinkButton
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
-                    title="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
+                    body="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
                     linkToFetch="/article/raspberry-pi-meteo.md"
                     tags={["Разработка"]}
                 />
@@ -22,7 +22,7 @@ function Main(props) {
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
-                    title="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
+                    body="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
                     linkToFetch="/article/airplane-ground-handling.md"
                     tags={["Авиация"]}
                 />
@@ -30,7 +30,7 @@ function Main(props) {
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
-                    title="Скорость и высота в авиации, и почему использовать в полёте барометр
+                    body="Скорость и высота в авиации, и почему использовать в полёте барометр
                   и GPS телефона (почти) бесполезно"
                     linkToFetch="/article/airplane-speed-and-gps.md"
                     tags={["Авиация"]}
@@ -39,7 +39,7 @@ function Main(props) {
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
-                    title="Верификация и валидация"
+                    body="Верификация и валидация"
                     linkToFetch="/article/verification-validation.md"
                     tags={["ISO 9000:2005"]}
                 />
@@ -47,15 +47,21 @@ function Main(props) {
                     setMain={props.setMain}
                     setArticle={props.setArticle}
                     setArticleTitle={props.setArticleTitle}
-                    title="Поднимаем собственный блог на Hugo"
+                    body="Поднимаем собственный блог на Hugo"
                     linkToFetch="/article/how-to-blog.md"
                     tags={["Разработка"]}
                 />
             </Col>
 
             <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                <h5>Работы</h5>
+                <h5 className="mb-3">Работы</h5>
 
+                <LinkButton
+                    title="Gutenberg"
+                    body="Платформа этого блога"
+                    link="https://github.com/axelrodvl/gutenberg"
+                    tags={["React"]}
+                />
                 <LinkButton
                     title="IBM MQ Client"
                     body="CLI для IBM MQ"
@@ -112,8 +118,8 @@ function LinkButton(props) {
                 props.setMain(false);
             }} className="text-reset text-decoration-none">
                 <Card.Body>
-                    <h6 className="card-subtitle mb-1">{props.title}</h6>
-                    {props.body ? <p className="mb-0">{props.body}</p> : <></>}
+                    {props.title ? <h6 className="mb-1">{props.title}</h6> : null}
+                    {props.body ? <p className="mb-1">{props.body}</p> : null}
                     {props.tags.map((tag) => (
                         <span className="badge badge-primary mr-1">{tag}</span>
                     ))}

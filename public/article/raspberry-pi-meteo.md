@@ -24,11 +24,7 @@
 
 Бот же - идеальный вариант как для выставления интерфейса, так и для предоставления доступа к железу из закрытого сегмента сети:
 
-
-<img src="raspberry-pi-meteo/i-am-at-home-bot.png" alt="Telegram бот" style="max-width: 300px"/>
-
-
-
+![Telegram бот](article/raspberry-pi-meteo/i-am-at-home-bot.png)
 
 
 Все просто. Одна большая кнопка «Сделать хорошо».
@@ -39,8 +35,7 @@
 ##### Закупаемся
 В моем случае используется [высокоточный метеодатчик](http://amperka.ru/product/troyka-meteo-sensor?utm_source=man&utm_campaign=troyka-meteo-sensor) на сенсоре [SHT3x-DIS](https://www.sensirion.com/en/environmental-sensors/humidity-sensors/digital-humidity-sensors-for-various-applications), работающий на шине I²C в сборке от компании [Амперка](http://amperka.ru), собранный с удобной разводкой:
 
-
-<img src="raspberry-pi-meteo/amperka-meteo-sensor.jpg" alt="Telegram бот" style="max-width: 300px"/>
+![Telegram бот](article/raspberry-pi-meteo/amperka-meteo-sensor.jpg)
 
 
 Гугление дает варианты покупки этого датчика и в виде голой платы - попрактикуйтесь в пайке ножек, если есть желание.
@@ -77,14 +72,14 @@
 
 В стандартной разводке Raspberry Pi датчик получится подключить двумя трехпроводными шлейфами, либо четырьмя одинарными проводами «мама-папа»:
 
-
-<img src="raspberry-pi-meteo/pi3gpio-meteo.png" alt="GPIO" style="max-width: 450px"/>
+![GPIO](article/raspberry-pi-meteo/pi3gpio-meteo.png)
 
 
 В собранном виде:
 
+![GPIO](article/raspberry-pi-meteo/rpi-meteo.jpg)
 
-<img src="raspberry-pi-meteo/rpi-meteo.jpg" alt="GPIO" style="max-width: 400px"/>
+
 
 
 Подключаемся к Pi по SSH и включаем шину I²C:
@@ -97,8 +92,7 @@ Would you like the ARM I2C interface to be enabled? - Yes
 ```
 
 ##### Проверяем корректность подключения
-Копируем скрипт на Pi:
-<script src="https://gist.github.com/axelrodvl/d1ce721c2851c8aaa413f337bff418f5.js"></script>
+Копируем скрипт [meteoSensor.py](https://gist.github.com/axelrodvl/d1ce721c2851c8aaa413f337bff418f5) на Pi
 
 При правильном подключении получаем данные:
 ```
