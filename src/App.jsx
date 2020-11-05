@@ -1,57 +1,174 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import './App.css';
 import {Breadcrumb, BreadcrumbItem, Container, Jumbotron} from "react-bootstrap";
-import Article from "./article/Article";
-import Main from "./main/Main";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faEnvelope, faFilePdf} from '@fortawesome/free-solid-svg-icons'
 import {faGithub} from "@fortawesome/free-brands-svg-icons"
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {
+    BrowserRouter as Router,
     Switch,
     Route,
-    Link, HashRouter
+    Link,
+    useRouteMatch
 } from "react-router-dom";
+import Card from "react-bootstrap/Card";
+import Topic from "./article/Topic";
 
-function App() {
-    const [main, setMain] = useState(true);
-
-    const [articleTitle, setArticleTitle] = useState(null);
-    const [articleMarkdownUrl, setArticleMarkdownUrl] = useState(null);
-
+export default function App() {
     return (
         <div className="App">
             <Container className="text-center">
                 <Header/>
 
-                <HashRouter>
+                <Router>
                     <div>
-                        <Breadcrumb className="text-center sticky-top">
-                            <BreadcrumbItem>
-                                <Link onClick={() => {
-                                    setMain(true);
-                                    window.scrollTo(0, 0);
-                                }} to="/">Главная</Link>
-                            </BreadcrumbItem>
-                            {!main
-                                ? <BreadcrumbItem active={true}>Статьи</BreadcrumbItem>
-                                : null
-                            }
-                        </Breadcrumb>
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/topics">Topics</Link>
+                            </li>
+                        </ul>
+
                         <Switch>
-                            <Route path="/article">
-                                <Article markdownFileUrl={articleMarkdownUrl} title={articleTitle} setMain={setMain}/>
+                            <Route path="/topics">
+                                <Topics />
                             </Route>
                             <Route path="/">
-                                <Main setArticle={setArticleMarkdownUrl} setArticleTitle={setArticleTitle} setMain={setMain}/>
+                                <Home />
                             </Route>
                         </Switch>
                     </div>
-                </HashRouter>
+                </Router>
 
                 <Footer/>
             </Container>
+        </div>
+    );
+}
+
+function Home() {
+    return <h2>Home</h2>;
+}
+
+function LinkButton(props) {
+    let match = useRouteMatch();
+
+    return (
+        <Card className="mb-3 btn btn-outline-dark">
+            <Link className="text-reset text-decoration-none"
+                  to={`${match.url}/${props.linkToFetch}`}>
+                <Card.Body>
+                    {props.title ? <h6 className="mb-1">{props.title}</h6> : null}
+                    {props.body ? <p className="mb-1">{props.body}</p> : null}
+                    {props.tags.map((tag) => (
+                        <span className="badge badge-primary mr-1">{tag}</span>
+                    ))}
+                </Card.Body>
+            </Link>
+        </Card>
+    )
+}
+
+function Topics() {
+    let match = useRouteMatch();
+
+    return (
+        <div>
+            <Switch>
+                <Route path={`${match.path}/:topicId`}>
+                    <Topic />
+                </Route>
+                <Route path={match.path}>
+                    <Row className="justify-content-between">
+                        <Col xs={12} sm={6} md={6} lg={6} xl={6}>
+                            <h5 className="mb-3">Статьи</h5>
+
+                            <LinkButton
+                                body="Обзор IBM App Connect Enterprise"
+                                linkToFetch="ibm-app-connect-enterprise"
+                                tags={["IBM", "App Connect Enterprise", "Integration Bus"]}
+                            />
+                            <LinkButton
+                                body="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
+                                linkToFetch="raspberry-pi-meteo"
+                                tags={["Разработка"]}
+                            />
+                            <LinkButton
+                                body="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
+                                linkToFetch="airplane-ground-handling"
+                                tags={["Авиация"]}
+                            />
+                            <LinkButton
+                                body="Скорость и высота в авиации, и почему использовать в полёте барометр
+                  и GPS телефона (почти) бесполезно"
+                                linkToFetch="airplane-speed-and-gps"
+                                tags={["Авиация"]}
+                            />
+                            <LinkButton
+                                body="Верификация и валидация"
+                                linkToFetch="verification-validation"
+                                tags={["ISO 9000:2005"]}
+                            />
+                            <LinkButton
+                                body="Поднимаем собственный блог на Hugo"
+                                linkToFetch="how-to-blog"
+                                tags={["Разработка"]}
+                            />
+                        </Col>
+
+                        <Col xs={12} sm={6} md={6} lg={6} xl={6}>
+                            <h5 className="mb-3">Работы</h5>
+
+                            <LinkButton
+                                title="Gutenberg"
+                                body="Платформа этого блога"
+                                link="https://github.com/axelrodvl/gutenberg"
+                                tags={["React"]}
+                            />
+                            <LinkButton
+                                title="IBM MQ Client"
+                                body="CLI для IBM MQ"
+                                link="https://github.com/axelrodvl/ibm-mq-client"
+                                tags={["Java", "IBM MQ"]}
+                            />
+                            <LinkButton
+                                title="Jenkins toolkit for Kubernetes"
+                                body="Создание pipeline на Jenkins в Kubernetes для сборки Java/Gradle"
+                                link="https://github.com/axelrodvl/jenkins-toolkit"
+                                tags={["Jenkins", "Kubernetes"]}
+                            />
+                            <LinkButton
+                                title="Smirnov Tennis"
+                                body="Веб-сайт тренера по большому теннису"
+                                link="https://smirnovtennis.com"
+                                tags={["JavaScript", "React", "Bootstrap"]}
+                            />
+                            <LinkButton
+                                title="Skyduck Web"
+                                body="Разработка frontend для Skyduck"
+                                link="https://skyduck.app/cabinet/"
+                                tags={["JavaScript", "React", "Bootstrap"]}
+                            />
+                            <LinkButton
+                                title="toU – couple game"
+                                body="Backend для мобильного приложения"
+                                link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
+                                tags={["Java", "Spring", "MongoDB"]}
+                            />
+                            <LinkButton
+                                title="youlost.today"
+                                body="Калькулятор изменения курсов валют с момента начала COVID-19"
+                                link="https://youlost.today/"
+                                tags={["JavaScript"]}
+                            />
+                        </Col>
+                    </Row>
+                </Route>
+            </Switch>
         </div>
     );
 }
@@ -95,5 +212,3 @@ function Footer() {
         </Jumbotron>
     )
 }
-
-export default App;
