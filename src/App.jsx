@@ -24,21 +24,21 @@ export default function App() {
 
                 <Router>
                     <div>
-                        <ul>
-                            <li>
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li>
-                                <Link to="/topics">Topics</Link>
-                            </li>
-                        </ul>
+                        <Breadcrumb className="text-center sticky-top">
+                            <BreadcrumbItem>
+                                <Link onClick={() => {
+                                    window.scrollTo(0, 0);
+                                }} to="/">Главная</Link>
+                            </BreadcrumbItem>
+                            {!true
+                                ? <BreadcrumbItem active={true}>Статьи</BreadcrumbItem>
+                                : null
+                            }
+                        </Breadcrumb>
 
                         <Switch>
-                            <Route path="/topics">
-                                <Topics />
-                            </Route>
                             <Route path="/">
-                                <Home />
+                                <Topics />
                             </Route>
                         </Switch>
                     </div>
@@ -50,17 +50,11 @@ export default function App() {
     );
 }
 
-function Home() {
-    return <h2>Home</h2>;
-}
-
 function LinkButton(props) {
-    let match = useRouteMatch();
-
     return (
         <Card className="mb-3 btn btn-outline-dark">
             <Link className="text-reset text-decoration-none"
-                  to={`${match.url}/${props.linkToFetch}`}>
+                  to={`/${props.linkToFetch}`}>
                 <Card.Body>
                     {props.title ? <h6 className="mb-1">{props.title}</h6> : null}
                     {props.body ? <p className="mb-1">{props.body}</p> : null}
@@ -73,20 +67,39 @@ function LinkButton(props) {
     )
 }
 
-function Topics() {
-    let match = useRouteMatch();
+function LinkButtonExternal(props) {
+    return (
+        <Card className="mb-3 btn btn-outline-dark">
+            <a className="text-reset text-decoration-none" href={props.link}>
+                <Card.Body>
+                    {props.title ? <h6 className="mb-1">{props.title}</h6> : null}
+                    {props.body ? <p className="mb-1">{props.body}</p> : null}
+                    {props.tags.map((tag) => (
+                        <span className="badge badge-primary mr-1">{tag}</span>
+                    ))}
+                </Card.Body>
+            </a>
+        </Card>
+    )
+}
 
+function Topics() {
     return (
         <div>
             <Switch>
-                <Route path={`${match.path}/:topicId`}>
+                <Route path={`/:topicId`}>
                     <Topic />
                 </Route>
-                <Route path={match.path}>
+                <Route path="/">
                     <Row className="justify-content-between">
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Статьи</h5>
 
+                            <LinkButton
+                                body="План вхождения в backend разработку"
+                                linkToFetch="backend-plan"
+                                tags={["Разработка", "Backend", "Обучение"]}
+                            />
                             <LinkButton
                                 body="Обзор IBM App Connect Enterprise"
                                 linkToFetch="ibm-app-connect-enterprise"
@@ -123,43 +136,43 @@ function Topics() {
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Работы</h5>
 
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="Gutenberg"
                                 body="Платформа этого блога"
                                 link="https://github.com/axelrodvl/gutenberg"
                                 tags={["React"]}
                             />
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="IBM MQ Client"
                                 body="CLI для IBM MQ"
                                 link="https://github.com/axelrodvl/ibm-mq-client"
                                 tags={["Java", "IBM MQ"]}
                             />
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="Jenkins toolkit for Kubernetes"
                                 body="Создание pipeline на Jenkins в Kubernetes для сборки Java/Gradle"
                                 link="https://github.com/axelrodvl/jenkins-toolkit"
                                 tags={["Jenkins", "Kubernetes"]}
                             />
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="Smirnov Tennis"
                                 body="Веб-сайт тренера по большому теннису"
                                 link="https://smirnovtennis.com"
                                 tags={["JavaScript", "React", "Bootstrap"]}
                             />
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="Skyduck Web"
                                 body="Разработка frontend для Skyduck"
                                 link="https://skyduck.app/cabinet/"
                                 tags={["JavaScript", "React", "Bootstrap"]}
                             />
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="toU – couple game"
                                 body="Backend для мобильного приложения"
                                 link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
                                 tags={["Java", "Spring", "MongoDB"]}
                             />
-                            <LinkButton
+                            <LinkButtonExternal
                                 title="youlost.today"
                                 body="Калькулятор изменения курсов валют с момента начала COVID-19"
                                 link="https://youlost.today/"
