@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React from 'react';
 import './App.css';
 import {Breadcrumb, BreadcrumbItem, Container, Jumbotron} from "react-bootstrap";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -10,8 +10,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useRouteMatch
+    Link
 } from "react-router-dom";
 import Card from "react-bootstrap/Card";
 import Topic from "./article/Topic";
@@ -96,38 +95,38 @@ function Topics() {
                             <h5 className="mb-3">Статьи</h5>
 
                             <LinkButton
-                                body="План вхождения в backend разработку"
+                                title="План вхождения в backend разработку"
                                 linkToFetch="backend-plan"
                                 tags={["Разработка", "Backend", "Обучение"]}
                             />
                             <LinkButton
-                                body="Обзор IBM App Connect Enterprise"
+                                title="Обзор IBM App Connect Enterprise"
                                 linkToFetch="ibm-app-connect-enterprise"
                                 tags={["IBM", "App Connect Enterprise", "Integration Bus"]}
                             />
                             <LinkButton
-                                body="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
+                                title="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
                                 linkToFetch="raspberry-pi-meteo"
                                 tags={["Разработка"]}
                             />
                             <LinkButton
-                                body="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
+                                title="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
                                 linkToFetch="airplane-ground-handling"
                                 tags={["Авиация"]}
                             />
                             <LinkButton
-                                body="Скорость и высота в авиации, и почему использовать в полёте барометр
+                                title="Скорость и высота в авиации, и почему использовать в полёте барометр
                   и GPS телефона (почти) бесполезно"
                                 linkToFetch="airplane-speed-and-gps"
                                 tags={["Авиация"]}
                             />
                             <LinkButton
-                                body="Верификация и валидация"
+                                title="Верификация и валидация"
                                 linkToFetch="verification-validation"
                                 tags={["ISO 9000:2005"]}
                             />
                             <LinkButton
-                                body="Поднимаем собственный блог на Hugo"
+                                title="Поднимаем собственный блог на Hugo"
                                 linkToFetch="how-to-blog"
                                 tags={["Разработка"]}
                             />
