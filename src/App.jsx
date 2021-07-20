@@ -51,6 +51,7 @@ export default function App() {
 
 function LinkButton(props) {
     return (
+
         <Card className="mb-3 btn btn-outline-dark">
             <Link className="text-reset text-decoration-none"
                   to={`/${props.linkToFetch}`}>
@@ -135,6 +136,12 @@ function Topics() {
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Работы</h5>
 
+                            <LinkButtonExternal
+                                title="ChatWords"
+                                body="Telegram бот - словарь и тренажер для изучения иностранной лексики"
+                                link="https://chatwords.app"
+                                tags={["Java", "Telegram"]}
+                            />
                             <LinkButtonExternal
                                 title="Gutenberg"
                                 body="Платформа этого блога"
