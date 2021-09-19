@@ -152,7 +152,7 @@ function Topics() {
                                 title="Dana | Tattoo artist"
                                 body="Веб-сайт тату-мастера"
                                 link="https://danatattooist.com"
-                                tags={["JavaScript"]}
+                                tags={["Bootstrap"]}
                             />
                              <LinkButtonExternal
                                 title="IBM MQ Client"
