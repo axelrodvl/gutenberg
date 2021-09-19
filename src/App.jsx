@@ -149,6 +149,12 @@ function Topics() {
                                 tags={["React"]}
                             />
                             <LinkButtonExternal
+                                title="Dana | Tattoo artist"
+                                body="Веб-сайт тату-мастера"
+                                link="https://danatattooist.com"
+                                tags={["JavaScript"]}
+                            />
+                             <LinkButtonExternal
                                 title="IBM MQ Client"
                                 body="CLI для IBM MQ"
                                 link="https://github.com/axelrodvl/ibm-mq-client"
@@ -178,7 +184,7 @@ function Topics() {
                                 link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
                                 tags={["Java", "Spring", "MongoDB"]}
                             />
-                            <LinkButtonExternal
+                           <LinkButtonExternal
                                 title="youlost.today"
                                 body="Калькулятор изменения курсов валют с момента начала COVID-19"
                                 link="https://youlost.today/"
