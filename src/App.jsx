@@ -27,10 +27,10 @@ export default function App() {
                             <BreadcrumbItem>
                                 <Link onClick={() => {
                                     window.scrollTo(0, 0);
-                                }} to="/">Главная</Link>
+                                }} to="/">Main</Link>
                             </BreadcrumbItem>
                             {!true
-                                ? <BreadcrumbItem active={true}>Статьи</BreadcrumbItem>
+                                ? <BreadcrumbItem active={true}>Articles</BreadcrumbItem>
                                 : null
                             }
                         </Breadcrumb>
@@ -56,7 +56,10 @@ function LinkButton(props) {
             <Link className="text-reset text-decoration-none"
                   to={`/${props.linkToFetch}`}>
                 <Card.Body>
-                    {props.title ? <h6 className="mb-1">{props.title}</h6> : null}
+                    {props.lang
+                        ? <>{props.title ? <><h6 className="mb-1"><span className="badge badge-pill mr-1">{props.lang}</span>{props.title}</h6></> : null}</>
+                        : <>{props.title ? <h6 className="mb-1">{props.title}</h6> : null}</>
+                    }
                     {props.body ? <p className="mb-1">{props.body}</p> : null}
                     {props.tags.map((tag) => (
                         <span className="badge badge-primary mr-1">{tag}</span>
@@ -93,102 +96,103 @@ function Topics() {
                 <Route path="/">
                     <Row className="justify-content-between">
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                            <h5 className="mb-3">Статьи</h5>
+                            <h5 className="mb-3">Articles</h5>
 
                             <LinkButton
                                 title="План вхождения в backend разработку"
+                                lang="RU"
                                 linkToFetch="backend-plan"
                                 tags={["Разработка", "Backend", "Обучение"]}
                             />
                             <LinkButton
                                 title="Обзор IBM App Connect Enterprise"
+                                lang="RU"
                                 linkToFetch="ibm-app-connect-enterprise"
                                 tags={["IBM", "App Connect Enterprise", "Integration Bus"]}
                             />
                             <LinkButton
                                 title="Собираем домашнюю метеостанцию с Telegram ботом на Raspberry Pi"
+                                lang="RU"
                                 linkToFetch="raspberry-pi-meteo"
                                 tags={["Разработка"]}
                             />
                             <LinkButton
                                 title="Airplane ground handling - технология наземного обслуживания самолетов представителем на перроне"
+                                lang="RU"
                                 linkToFetch="airplane-ground-handling"
                                 tags={["Авиация"]}
                             />
                             <LinkButton
                                 title="Скорость и высота в авиации, и почему использовать в полёте барометр
                   и GPS телефона (почти) бесполезно"
+                                lang="RU"
                                 linkToFetch="airplane-speed-and-gps"
                                 tags={["Авиация"]}
                             />
                             <LinkButton
                                 title="Верификация и валидация"
+                                lang="RU"
                                 linkToFetch="verification-validation"
                                 tags={["ISO 9000:2005"]}
                             />
                             <LinkButton
                                 title="Поднимаем собственный блог на Hugo"
+                                lang="RU"
                                 linkToFetch="how-to-blog"
                                 tags={["Разработка"]}
                             />
                         </Col>
 
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                            <h5 className="mb-3">Работы</h5>
+                            <h5 className="mb-3">Projects</h5>
 
                             <LinkButtonExternal
                                 title="ChatWords"
-                                body="Telegram бот - словарь и тренажер для изучения иностранной лексики"
+                                body="Telegram bot - translator and dictionary for learning foreign languages"
                                 link="https://chatwords.app"
-                                tags={["Java", "Telegram"]}
+                                tags={["Java", "Spring", "MongoDB", "Telegram"]}
                             />
                             <LinkButtonExternal
                                 title="Gutenberg"
-                                body="Платформа этого блога"
+                                body="Platform of this blog"
                                 link="https://github.com/axelrodvl/gutenberg"
                                 tags={["React"]}
                             />
                             <LinkButtonExternal
                                 title="Dana | Tattoo artist"
-                                body="Веб-сайт тату-мастера"
+                                body="Tattoo artist website"
                                 link="https://danatattooist.com"
                                 tags={["Bootstrap"]}
                             />
                              <LinkButtonExternal
                                 title="IBM MQ Client"
-                                body="CLI для IBM MQ"
+                                body="CLI for IBM MQ"
                                 link="https://github.com/axelrodvl/ibm-mq-client"
                                 tags={["Java", "IBM MQ"]}
                             />
                             <LinkButtonExternal
                                 title="Jenkins toolkit for Kubernetes"
-                                body="Создание pipeline на Jenkins в Kubernetes для сборки Java/Gradle"
+                                body="Java/Gradle building pipelines for Jenkins in Kubernetes"
                                 link="https://github.com/axelrodvl/jenkins-toolkit"
                                 tags={["Jenkins", "Kubernetes"]}
                             />
                             <LinkButtonExternal
                                 title="Smirnov Tennis"
-                                body="Веб-сайт тренера по большому теннису"
+                                body="Tennis coach website"
                                 link="https://smirnovtennis.com"
                                 tags={["JavaScript", "React", "Bootstrap"]}
                             />
                             <LinkButtonExternal
                                 title="Skyduck Web"
-                                body="Разработка frontend для Skyduck"
+                                body="Frontend for Skyduck"
                                 link="https://skyduck.app/cabinet/"
                                 tags={["JavaScript", "React", "Bootstrap"]}
                             />
                             <LinkButtonExternal
                                 title="toU – couple game"
-                                body="Backend для мобильного приложения"
+                                body="Backend for mobile application"
                                 link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
                                 tags={["Java", "Spring", "MongoDB"]}
-                            />
-                           <LinkButtonExternal
-                                title="youlost.today"
-                                body="Калькулятор изменения курсов валют с момента начала COVID-19"
-                                link="https://youlost.today/"
-                                tags={["JavaScript"]}
                             />
                         </Col>
                     </Row>
@@ -201,8 +205,8 @@ function Topics() {
 function Header() {
     return (
         <Jumbotron className="mt-4">
-            <h3>Вадим Аксельрод</h3>
-            <span>Разработчик ПО</span>
+            <h3>Vadim Axelrod</h3>
+            <span>Software Developer</span>
             <p className="mt-1 mb-0">
                 <a href="https://github.com/axelrodvl"><FontAwesomeIcon icon={faGithub}/> axelrodvl</a>
             </p>
@@ -210,7 +214,7 @@ function Header() {
                 <a href="mailto:vadim@axelrod.co"><FontAwesomeIcon icon={faEnvelope}/> vadim@axelrod.co</a>
             </p>
             <p className="mb-0">
-                <a href="cv/CV-Axelrod_Vadim.pdf"><FontAwesomeIcon icon={faFilePdf}/> Резюме</a>
+                <a href="cv/CV-Axelrod_Vadim.pdf"><FontAwesomeIcon icon={faFilePdf}/> CV</a>
             </p>
         </Jumbotron>
     )
