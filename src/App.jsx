@@ -96,6 +96,59 @@ function Topics() {
                 <Route path="/">
                     <Row className="justify-content-between">
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
+                            <h5 className="mb-3">Projects</h5>
+
+                            <LinkButtonExternal
+                                title="ChatWords"
+                                body="Telegram bot - translator and dictionary for learning foreign languages"
+                                link="https://chatwords.app"
+                                tags={["Java", "Spring", "MongoDB", "Telegram"]}
+                            />
+                            <LinkButtonExternal
+                                title="Gutenberg"
+                                body="Platform of this blog"
+                                link="https://github.com/axelrodvl/gutenberg"
+                                tags={["React"]}
+                            />
+                            <LinkButtonExternal
+                                title="Dana | Tattoo artist"
+                                body="Tattoo artist website"
+                                link="https://danatattooist.com"
+                                tags={["Bootstrap"]}
+                            />
+                            <LinkButtonExternal
+                                title="IBM MQ Client"
+                                body="CLI for IBM MQ"
+                                link="https://github.com/axelrodvl/ibm-mq-client"
+                                tags={["Java", "IBM MQ"]}
+                            />
+                            <LinkButtonExternal
+                                title="Jenkins toolkit for Kubernetes"
+                                body="Java/Gradle building pipelines for Jenkins in Kubernetes"
+                                link="https://github.com/axelrodvl/jenkins-toolkit"
+                                tags={["Jenkins", "Kubernetes"]}
+                            />
+                            <LinkButtonExternal
+                                title="Smirnov Tennis"
+                                body="Tennis coach website"
+                                link="https://smirnovtennis.com"
+                                tags={["JavaScript", "React", "Bootstrap"]}
+                            />
+                            <LinkButtonExternal
+                                title="Skyduck Web"
+                                body="Frontend for Skyduck"
+                                link="https://skyduck.app/cabinet/"
+                                tags={["JavaScript", "React", "Bootstrap"]}
+                            />
+                            <LinkButtonExternal
+                                title="toU – couple game"
+                                body="Backend for mobile application"
+                                link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
+                                tags={["Java", "Spring", "MongoDB"]}
+                            />
+                        </Col>
+
+                        <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Articles</h5>
 
                             <LinkButton
@@ -140,59 +193,6 @@ function Topics() {
                                 lang="RU"
                                 linkToFetch="how-to-blog"
                                 tags={["Разработка"]}
-                            />
-                        </Col>
-
-                        <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-                            <h5 className="mb-3">Projects</h5>
-
-                            <LinkButtonExternal
-                                title="ChatWords"
-                                body="Telegram bot - translator and dictionary for learning foreign languages"
-                                link="https://chatwords.app"
-                                tags={["Java", "Spring", "MongoDB", "Telegram"]}
-                            />
-                            <LinkButtonExternal
-                                title="Gutenberg"
-                                body="Platform of this blog"
-                                link="https://github.com/axelrodvl/gutenberg"
-                                tags={["React"]}
-                            />
-                            <LinkButtonExternal
-                                title="Dana | Tattoo artist"
-                                body="Tattoo artist website"
-                                link="https://danatattooist.com"
-                                tags={["Bootstrap"]}
-                            />
-                             <LinkButtonExternal
-                                title="IBM MQ Client"
-                                body="CLI for IBM MQ"
-                                link="https://github.com/axelrodvl/ibm-mq-client"
-                                tags={["Java", "IBM MQ"]}
-                            />
-                            <LinkButtonExternal
-                                title="Jenkins toolkit for Kubernetes"
-                                body="Java/Gradle building pipelines for Jenkins in Kubernetes"
-                                link="https://github.com/axelrodvl/jenkins-toolkit"
-                                tags={["Jenkins", "Kubernetes"]}
-                            />
-                            <LinkButtonExternal
-                                title="Smirnov Tennis"
-                                body="Tennis coach website"
-                                link="https://smirnovtennis.com"
-                                tags={["JavaScript", "React", "Bootstrap"]}
-                            />
-                            <LinkButtonExternal
-                                title="Skyduck Web"
-                                body="Frontend for Skyduck"
-                                link="https://skyduck.app/cabinet/"
-                                tags={["JavaScript", "React", "Bootstrap"]}
-                            />
-                            <LinkButtonExternal
-                                title="toU – couple game"
-                                body="Backend for mobile application"
-                                link="https://apps.apple.com/ru/app/tou-couple-game/id1478656277"
-                                tags={["Java", "Spring", "MongoDB"]}
                             />
                         </Col>
                     </Row>
