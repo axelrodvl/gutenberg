@@ -99,6 +99,18 @@ function Topics() {
                             <h5 className="mb-3">Projects</h5>
 
                             <LinkButtonExternal
+                                title="ASATools"
+                                body="Frontend for Apple Search Ads Attribution marketing analytics"
+                                link="https://asa.tools"
+                                tags={["JavaScript", "React", "Antd"]}
+                            />
+                            <LinkButtonExternal
+                                title="Kartvelian Online"
+                                body="Tool for learning Georgian alphabet"
+                                link="https://kartvelian.online"
+                                tags={["JavaScript", "React", "Antd"]}
+                            />
+                            <LinkButtonExternal
                                 title="ChatWords"
                                 body="Telegram bot - translator and dictionary for learning foreign languages"
                                 link="https://chatwords.app"
