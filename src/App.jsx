@@ -23,18 +23,6 @@ export default function App() {
 
                 <Router>
                     <div>
-                        <Breadcrumb className="text-center sticky-top">
-                            <BreadcrumbItem>
-                                <Link onClick={() => {
-                                    window.scrollTo(0, 0);
-                                }} to="/">Main</Link>
-                            </BreadcrumbItem>
-                            {!true
-                                ? <BreadcrumbItem active={true}>Blog</BreadcrumbItem>
-                                : null
-                            }
-                        </Breadcrumb>
-
                         <Switch>
                             <Route path="/">
                                 <Topics />
@@ -107,7 +95,7 @@ function Topics() {
                              <LinkButtonExternal
                                 title="ChatWords"
                                 body="Telegram bot - translator and dictionary for learning foreign languages"
-                                link="https://chatwords.app"
+                                link="https://github.com/axelrodvl/chatwords-public"
                                 tags={["Java", "Spring", "MongoDB", "Telegram"]}
                             />
                              <LinkButtonExternal
