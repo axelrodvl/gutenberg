@@ -30,7 +30,7 @@ export default function App() {
                                 }} to="/">Main</Link>
                             </BreadcrumbItem>
                             {!true
-                                ? <BreadcrumbItem active={true}>Articles</BreadcrumbItem>
+                                ? <BreadcrumbItem active={true}>Blog</BreadcrumbItem>
                                 : null
                             }
                         </Breadcrumb>
@@ -98,31 +98,31 @@ function Topics() {
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Projects</h5>
 
-                            <LinkButtonExternal
-                                title="Axelrod Natalya"
-                                body="Psychologist website"
-                                link="https://axelrodnatalya.com"
-                                tags={["TypeScript", "React", "Antd", "Java", "Spring"]}
-                            />
-                            <LinkButtonExternal
+                           <LinkButtonExternal
                                 title="ASATools"
                                 body="Frontend for Apple Search Ads Attribution marketing analytics"
                                 link="https://asa.tools"
                                 tags={["JavaScript", "React", "Antd"]}
                             />
-                            <LinkButtonExternal
+                             <LinkButtonExternal
+                                title="ChatWords"
+                                body="Telegram bot - translator and dictionary for learning foreign languages"
+                                link="https://chatwords.app"
+                                tags={["Java", "Spring", "MongoDB", "Telegram"]}
+                            />
+                             <LinkButtonExternal
                                 title="Kartvelian Online"
                                 body="Tool for learning Georgian alphabet"
                                 link="https://kartvelian.online"
                                 tags={["JavaScript", "React", "Antd"]}
                             />
                             <LinkButtonExternal
-                                title="ChatWords"
-                                body="Telegram bot - translator and dictionary for learning foreign languages"
-                                link="https://chatwords.app"
-                                tags={["Java", "Spring", "MongoDB", "Telegram"]}
+                                title="Axelrod Natalya"
+                                body="Psychologist website"
+                                link="https://axelrodnatalya.com"
+                                tags={["TypeScript", "React", "Antd", "Java", "Spring"]}
                             />
-                            <LinkButtonExternal
+                           <LinkButtonExternal
                                 title="Gutenberg"
                                 body="Platform of this blog"
                                 link="https://github.com/axelrodvl/gutenberg"
@@ -147,12 +147,6 @@ function Topics() {
                                 tags={["Jenkins", "Kubernetes"]}
                             />
                             <LinkButtonExternal
-                                title="Smirnov Tennis"
-                                body="Tennis coach website"
-                                link="https://smirnovtennis.com"
-                                tags={["JavaScript", "React", "Bootstrap"]}
-                            />
-                            <LinkButtonExternal
                                 title="Skyduck Web"
                                 body="Frontend for Skyduck"
                                 link="https://skyduck.app/cabinet/"
@@ -169,6 +163,11 @@ function Topics() {
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Articles</h5>
 
+                            <LinkButtonExternal
+                                title="Project Reactor and WebFlux presentation"
+                                link="https://axelrodvl.github.io/project-reactor-and-webflux-presentation/"
+                                tags={["Java", "Spring", "WebFlux", "Project Reactor"]}
+                            />
                             <LinkButton
                                 title="План вхождения в backend разработку"
                                 lang="RU"
