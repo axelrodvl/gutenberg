@@ -101,7 +101,7 @@ function Topics() {
                              <LinkButtonExternal
                                 title="Kartvelian Online"
                                 body="Tool for learning Georgian alphabet"
-                                link="https://kartvelian.online"
+                                link="https://kartvelian.axelrod.co"
                                 tags={["JavaScript", "React", "Antd"]}
                             />
                             <LinkButtonExternal
