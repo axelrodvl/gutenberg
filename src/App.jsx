@@ -119,7 +119,7 @@ function Topics() {
                             <LinkButtonExternal
                                 title="Dana | Tattoo artist"
                                 body="Tattoo artist website"
-                                link="https://danatattooist.com"
+                                link="https://dana.tattoo"
                                 tags={["Bootstrap"]}
                             />
                             <LinkButtonExternal
