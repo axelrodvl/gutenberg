@@ -85,7 +85,12 @@ function Topics() {
                     <Row className="justify-content-between">
                         <Col xs={12} sm={6} md={6} lg={6} xl={6}>
                             <h5 className="mb-3">Projects</h5>
-
+                            <LinkButtonExternal
+                                title="macaron.ge"
+                                body="Frontend for bakery"
+                                link="https://macaron.ge"
+                                tags={["TypeScript", "React", "Antd"]}
+                            />
                            <LinkButtonExternal
                                 title="ASATools"
                                 body="Frontend for Apple Search Ads Attribution marketing analytics"
